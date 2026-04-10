@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #020617;
+  --color-muted: #64748b;
+  --color-accent: #4338ca;
+  --color-accent-hover: #3730a3;
+  --color-brand-navy: #041e42;
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+:root {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: initial;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+.glass-morphism {
+  @apply bg-white/20 backdrop-blur-xl border border-white/30;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Apple Freeform Style Loader Animations ─── */
+@keyframes loader-bounce {
+  0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.3; }
+  50% { transform: translateY(-20px) scaleY(1.1); opacity: 1; }
+}
+
+@keyframes loader-progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(12deg); }
+  50% { transform: translate(10px, -20px) rotate(15deg); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translate(0, 0) rotate(-12deg); }
+  50% { transform: translate(-10px, 20px) rotate(-15deg); }
+}
+
+.animate-loader-bounce {
+  animation: loader-bounce 1.5s infinite ease-in-out;
+}
+
+.animate-loader-progress {
+  animation: loader-progress 2s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: float 6s infinite ease-in-out;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s infinite ease-in-out;
+}
+
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@utility perspective-1000 {
+  perspective: 1000px;
+}
+
+@utility perspective-2000 {
+  perspective: 2000px;
+}
+
+.cinematic-glow {
+  box-shadow: 0 0 40px rgba(67, 56, 202, 0.1),
+              0 0 100px rgba(67, 56, 202, 0.05);
+}
+
+.text-gradient-cinematic {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-600 to-gray-400;
+}
