@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Expert GMB Creation & Local SEO Setup | Kriscel tech',
-  description: 'Boost your local visibility. Set up your Google My Business correctly to capture local customers actively searching in your area.',
+  title: 'GMB Creation Service in Delhi | Boost Local Business Visibility',
+  description: 'Professional GMB Creation Service in Delhi to help your business appear on Google Maps & Search, boost local visibility & attract new customers',
   keywords: 'GMB Creation, Google My Business, Local SEO, Local Business Listing, Map Ranking',
   openGraph: {
-    title: 'Expert GMB Creation & Local SEO Setup | Kriscel tech',
-    description: 'Boost your local visibility. Set up your Google My Business correctly to capture local customers actively searching in your area.',
+    title: 'GMB Creation Service in Delhi | Boost Local Business Visibility',
+    description: 'Professional GMB Creation Service in Delhi to help your business appear on Google Maps & Search, boost local visibility & attract new customers',
     url: 'https://kriscel.com/gmb-creation',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert GMB Creation & Local SEO Setup | Kriscel tech',
-    description: 'Boost your local visibility. Set up your Google My Business correctly to capture local customers actively searching in your area.',
+    title: 'GMB Creation Service in Delhi | Boost Local Business Visibility',
+    description: 'Professional GMB Creation Service in Delhi to help your business appear on Google Maps & Search, boost local visibility & attract new customers',
   },
   alternates: {
     canonical: 'https://kriscel.com/gmb-creation',

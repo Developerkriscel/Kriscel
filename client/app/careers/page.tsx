@@ -1,9 +1,14 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { Search, MapPin, Briefcase, Filter, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: 'Career - bisque-lark-249231.hostingersite.com',
+};
 import { API_URL } from "@/lib/api";
 
 export default function CareersPage() {

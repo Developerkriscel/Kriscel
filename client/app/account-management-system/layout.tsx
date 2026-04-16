@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Secure Account Management System Solutions | Kriscel tech',
-  description: 'Automate financial and billing workflows. Ensure 100% accuracy and speed up your daily operations seamlessly.',
+  title: 'Account Management System Service in Delhi | Kriscel tech',
+  description: 'Boost your business efficiency with our expert Account Management System service in Delhi. Streamline accounts, save time, and grow smarter',
   keywords: 'Account Management System, Billing Automation Software, Financial Records System',
   openGraph: {
-    title: 'Secure Account Management System Solutions | Kriscel tech',
-    description: 'Automate financial and billing workflows. Ensure 100% accuracy and speed up your daily operations seamlessly.',
+    title: 'Account Management System Service in Delhi | Kriscel tech',
+    description: 'Boost your business efficiency with our expert Account Management System service in Delhi. Streamline accounts, save time, and grow smarter',
     url: 'https://kriscel.com/account-management-system',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Secure Account Management System Solutions | Kriscel tech',
-    description: 'Automate financial and billing workflows. Ensure 100% accuracy and speed up your daily operations seamlessly.',
+    title: 'Account Management System Service in Delhi | Kriscel tech',
+    description: 'Boost your business efficiency with our expert Account Management System service in Delhi. Streamline accounts, save time, and grow smarter',
   },
   alternates: {
     canonical: 'https://kriscel.com/account-management-system',

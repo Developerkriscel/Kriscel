@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Expert Online Reputation Management (ORM) | Kriscel tech',
-  description: 'Protect your brand. Our Online Reputation Management experts suppress negative links and push positive customer reviews to the #1 spot.',
+  title: 'Online Reputation Management Service in Delhi | Kriscel tech',
+  description: 'Get expert Online Reputation Management service in Delhi. From handling negative reviews to improving brand credibility',
   keywords: 'Online Reputation Management, ORM Services, Brand Protection, Review Management, Trust Building',
   openGraph: {
-    title: 'Expert Online Reputation Management (ORM) | Kriscel tech',
-    description: 'Protect your brand. Our Online Reputation Management experts suppress negative links and push positive customer reviews to the #1 spot.',
+    title: 'Online Reputation Management Service in Delhi | Kriscel tech',
+    description: 'Get expert Online Reputation Management service in Delhi. From handling negative reviews to improving brand credibility',
     url: 'https://kriscel.com/online-reputation-management',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Online Reputation Management (ORM) | Kriscel tech',
-    description: 'Protect your brand. Our Online Reputation Management experts suppress negative links and push positive customer reviews to the #1 spot.',
+    title: 'Online Reputation Management Service in Delhi | Kriscel tech',
+    description: 'Get expert Online Reputation Management service in Delhi. From handling negative reviews to improving brand credibility',
   },
   alternates: {
     canonical: 'https://kriscel.com/online-reputation-management',

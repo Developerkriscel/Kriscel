@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Kriscel",
+  title: "About Kriscel tech – Your Partner in Growth & Innovation",
+  description: "Discover the story of Krisceltech. With a focus on Marketing, Recruitment & E-Commerce, we are committed to helping companies grow with trust",
 };
 
 export default function AboutPage() {

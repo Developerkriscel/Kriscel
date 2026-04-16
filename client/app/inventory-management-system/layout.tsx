@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Best Inventory Management System in India | Kriscel tech',
-  description: 'Gain complete control of your stock. Our intelligent Inventory Management System tracks, organizes, and automates your supply chain for zero delays.',
+  title: 'Inventory Management System Service in Delhi | Kriscel tech',
+  description: 'Inventory Management System service in Delhi. Simplify stock tracking & manage your business operations with smart, & scalable solutions',
   keywords: 'Inventory Management System, Stock Management Software, Supply Chain Automation, Warehouse Management',
   openGraph: {
-    title: 'Best Inventory Management System in India | Kriscel tech',
-    description: 'Gain complete control of your stock. Our intelligent Inventory Management System tracks, organizes, and automates your supply chain for zero delays.',
+    title: 'Inventory Management System Service in Delhi | Kriscel tech',
+    description: 'Inventory Management System service in Delhi. Simplify stock tracking & manage your business operations with smart, & scalable solutions',
     url: 'https://kriscel.com/inventory-management-system',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Inventory Management System in India | Kriscel tech',
-    description: 'Gain complete control of your stock. Our intelligent Inventory Management System tracks, organizes, and automates your supply chain for zero delays.',
+    title: 'Inventory Management System Service in Delhi | Kriscel tech',
+    description: 'Inventory Management System service in Delhi. Simplify stock tracking & manage your business operations with smart, & scalable solutions',
   },
   alternates: {
     canonical: 'https://kriscel.com/inventory-management-system',

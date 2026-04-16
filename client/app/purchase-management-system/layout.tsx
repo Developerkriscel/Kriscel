@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Top Purchase Management System | Kriscel tech',
-  description: 'Simplify purchasing, track vendors, and process orders flawlessly with intelligent purchasing automation software by Kriscel tech.',
+  title: 'Purchase Management System Service in Delhi | Kriscel tech',
+  description: 'Boost efficiency with our advanced Purchase Management System in Delhi. Simplify buying, track expenses, and scale your business smartly',
   keywords: 'Purchase Management System, Vendor Management, Order Processing Software',
   openGraph: {
-    title: 'Top Purchase Management System | Kriscel tech',
-    description: 'Simplify purchasing, track vendors, and process orders flawlessly with intelligent purchasing automation software by Kriscel tech.',
+    title: 'Purchase Management System Service in Delhi | Kriscel tech',
+    description: 'Boost efficiency with our advanced Purchase Management System in Delhi. Simplify buying, track expenses, and scale your business smartly',
     url: 'https://kriscel.com/purchase-management-system',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Top Purchase Management System | Kriscel tech',
-    description: 'Simplify purchasing, track vendors, and process orders flawlessly with intelligent purchasing automation software by Kriscel tech.',
+    title: 'Purchase Management System Service in Delhi | Kriscel tech',
+    description: 'Boost efficiency with our advanced Purchase Management System in Delhi. Simplify buying, track expenses, and scale your business smartly',
   },
   alternates: {
     canonical: 'https://kriscel.com/purchase-management-system',

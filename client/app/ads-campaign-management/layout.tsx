@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'E-commerce ADS Campaign Management | Kriscel tech',
-  description: 'Lower your ACoS and drive sales. We design powerful ADS Campaign Management on Amazon and Flipkart tailored for peak marketplace profitability.',
+  title: 'Paid Ads Management Services in Delhi | Drive Targeted Leads',
+  description: 'Get result-driven paid ads management services in Delhi. From Google Ads to social media campaigns optimized for reach, conversions & ROI.',
   keywords: 'ADS Campaign Management, E-commerce PPC, Amazon Ads Optimization, Marketplaces Advertising',
   openGraph: {
-    title: 'E-commerce ADS Campaign Management | Kriscel tech',
-    description: 'Lower your ACoS and drive sales. We design powerful ADS Campaign Management on Amazon and Flipkart tailored for peak marketplace profitability.',
+    title: 'Paid Ads Management Services in Delhi | Drive Targeted Leads',
+    description: 'Get result-driven paid ads management services in Delhi. From Google Ads to social media campaigns optimized for reach, conversions & ROI.',
     url: 'https://kriscel.com/ads-campaign-management',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'E-commerce ADS Campaign Management | Kriscel tech',
-    description: 'Lower your ACoS and drive sales. We design powerful ADS Campaign Management on Amazon and Flipkart tailored for peak marketplace profitability.',
+    title: 'Paid Ads Management Services in Delhi | Drive Targeted Leads',
+    description: 'Get result-driven paid ads management services in Delhi. From Google Ads to social media campaigns optimized for reach, conversions & ROI.',
   },
   alternates: {
     canonical: 'https://kriscel.com/ads-campaign-management',

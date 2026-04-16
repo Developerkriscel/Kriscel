@@ -3,8 +3,8 @@ import { API_URL } from '@/lib/api';
 
 export async function getPageMetadata(path: string): Promise<Metadata> {
   const defaultMetadata: Metadata = {
-    title: "Kriscel",
-    description: "Kriscel Tech delivers high-performance digital solutions for businesses, from automation to digital marketing.",
+    title: "Kriscel tech – Business Automation & Digital Growth Partner",
+    description: "Kriscel tech transforms businesses with AI-powered automation, digital marketing, e-commerce & recruitment services—designed to Business growth",
     metadataBase: new URL(process.env.NEXT_PUBLIC_CLIENT_URL || 'http://localhost:3000'),
     robots: "index, follow",
     icons: {
@@ -12,6 +12,8 @@ export async function getPageMetadata(path: string): Promise<Metadata> {
       apple: "/images/kriscel-logo.png",
     },
     openGraph: {
+      title: "Kriscel tech – Business Automation & Digital Growth Partner",
+      description: "Kriscel tech transforms businesses with AI-powered automation, digital marketing, e-commerce & recruitment services—designed to Business growth",
       type: 'website',
       locale: 'en_IN',
       url: `https://www.kriscel.com${path}`,

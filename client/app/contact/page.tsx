@@ -1,9 +1,14 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
+export const metadata: Metadata = {
+  title: "Contact Us - bisque-lark-249231.hostingersite.com",
+};
 import { Phone, Mail, MapPin, CheckCircle2, XCircle, ArrowRight, Clock, Loader2 } from "lucide-react";
 import { API_URL } from "../../lib/api";
 

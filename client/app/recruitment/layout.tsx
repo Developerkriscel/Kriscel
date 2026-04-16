@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Top Recruitment & Staffing Solutions | Kriscel tech',
-  description: 'Discover top-tier talent fast. Our precision Recruitment services guarantee standard-setting placements explicitly tailored for your enterprise needs.',
+  title: 'Recruitment Services in Delhi NCR | Trusted Hiring Solutions',
+  description: 'Kriscel tech offers Best recruitment services in Delhi NCR, helping businesses find skilled talent with efficient staffing & hiring solutions',
   keywords: 'Recruitment, Staffing Solutions, IT Recruitment, Executive Search India, Talent Acquisition',
   openGraph: {
-    title: 'Top Recruitment & Staffing Solutions | Kriscel tech',
-    description: 'Discover top-tier talent fast. Our precision Recruitment services guarantee standard-setting placements explicitly tailored for your enterprise needs.',
+    title: 'Recruitment Services in Delhi NCR | Trusted Hiring Solutions',
+    description: 'Kriscel tech offers Best recruitment services in Delhi NCR, helping businesses find skilled talent with efficient staffing & hiring solutions',
     url: 'https://kriscel.com/recruitment',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Top Recruitment & Staffing Solutions | Kriscel tech',
-    description: 'Discover top-tier talent fast. Our precision Recruitment services guarantee standard-setting placements explicitly tailored for your enterprise needs.',
+    title: 'Recruitment Services in Delhi NCR | Trusted Hiring Solutions',
+    description: 'Kriscel tech offers Best recruitment services in Delhi NCR, helping businesses find skilled talent with efficient staffing & hiring solutions',
   },
   alternates: {
     canonical: 'https://kriscel.com/recruitment',
