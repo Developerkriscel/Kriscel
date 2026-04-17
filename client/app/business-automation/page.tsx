@@ -210,8 +210,7 @@ export default function BusinessAutomation() {
                 Scalable Systems
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Business <br className="hidden md:block" />
-                Automation <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Strategy.</span>
+                Top Business Automation Services in Delhi NCR | Kriscel tech
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Automate your entire workflow with intelligent systems that reduce manual effort. Increase accuracy, save time, and accelerate business growth effortlessly.

@@ -5,10 +5,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-export const metadata: Metadata = {
-  title: "Contact Us - bisque-lark-249231.hostingersite.com",
-};
 import { Phone, Mail, MapPin, CheckCircle2, XCircle, ArrowRight, Clock, Loader2 } from "lucide-react";
 import { API_URL } from "../../lib/api";
 
@@ -82,11 +78,7 @@ export default function ContactPage() {
                   Get in Touch
                 </span>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.9] mb-6">
-                  Let's <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent to-violet-400 italic">
-                    build
-                  </span>
-                  <br />together.
+                  Contact Us
                 </h1>
                 <p className="text-slate-400 text-base leading-relaxed max-w-xs">
                   Tell us about your business. We'll tell you exactly how we'll scale it — with automation, marketing, and digital strategy.

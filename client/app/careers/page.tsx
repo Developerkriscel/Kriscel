@@ -5,10 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { Search, MapPin, Briefcase, Filter, ArrowRight } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: 'Career - bisque-lark-249231.hostingersite.com',
-};
 import { API_URL } from "@/lib/api";
 
 export default function CareersPage() {
@@ -73,7 +69,7 @@ export default function CareersPage() {
             Join Kriscel Tech
           </div>
           <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-6">
-            Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent italic">Future.</span>
+            Career
           </h1>
           <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
             We are looking for passionate builders, designers, and engineers to craft the next generation of business automation.

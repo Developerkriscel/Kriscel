@@ -209,8 +209,7 @@ export default function WebDesigning() {
                 Design Driven
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Web <br className="hidden md:block" />
-                Designing <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Impact.</span>
+                Professional Web Designing Service in Delhi | Kriscel tech
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Top web designing services in Delhi to build responsive & SEO-friendly websites. Grow your business with professional website solutions that wow your customers.

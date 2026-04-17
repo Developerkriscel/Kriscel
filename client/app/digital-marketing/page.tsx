@@ -211,8 +211,7 @@ export default function DigitalMarketing() {
                 Global Visibility
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Digital <br className="hidden md:block" />
-                Marketing <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Solutions.</span>
+                Digital Marketing Services in Delhi NCR | Kriscel tech
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Boost your online presence and accelerate business growth with our full-service digital marketing solutions. Data-driven strategy, creative campaigns, and consistent leads.

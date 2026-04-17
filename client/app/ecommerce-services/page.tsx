@@ -206,8 +206,7 @@ export default function EcommerceServices() {
                 Revenue Growth
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                E-Commerce <br className="hidden md:block" />
-                Management <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Solutions.</span>
+                E-commerce Services in Delhi NCR | Kriscel tech
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 We build powerful, fast, and conversion-focused online stores designed to attract customers, deliver a seamless shopping experience, and consistently boost online sales.

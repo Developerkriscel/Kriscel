@@ -209,8 +209,7 @@ export default function SearchEngineOptimization() {
                 ROI Focused SEO
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Search Engine <br className="hidden md:block" />
-                Optimization <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Strategy.</span>
+                Top SEO Services Provider in Delhi NCR | Trusted Digital Experts
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Attract high-quality organic traffic and dominate search results with our professional SEO services. Improve rankings, drive targeted leads, and stay ahead of competitors.

@@ -209,8 +209,7 @@ export default function AccountManagement() {
                 Total Control
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Account <br className="hidden md:block" />
-                Management <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Solutions.</span>
+                E-Commerce Account Management Service in Delhi | Kriscel tech
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Optimize your E-Commerce platform with our expert Account Management service in Delhi. Track, manage, and automate your presence across Amazon, Flipkart, & more.

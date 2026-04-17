@@ -228,8 +228,7 @@ export default function ContentMarketing() {
                 Creative Storytelling
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Content <br className="hidden md:block" />
-                Marketing <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Impact.</span>
+                Strategic Content Marketing Services | Kriscel tech
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Grow your brand with professional content marketing. We deliver SEO-friendly content, blogs, and campaigns that attract customers and establish your industry authority.

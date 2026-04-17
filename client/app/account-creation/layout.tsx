@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Account Management Service in Delhi | Kriscel tech',
-  description: 'Optimize your E-Commerce platform with our expert Account Management System service in Delhi. Track, manage, & automate accounts to save time',
+  title: 'E-ccomerce Account Creation Service Provider in Delhi | Kriscel tech',
+  description: 'Get a Professional E-Commerce account creation services Provider in Delhi. Boost your online sales with expert setup and marketplace support.',
   keywords: 'Account Creation, Seller Registration, Amazon Account Setup, Flipkart Onboarding, Business Seller Account',
   openGraph: {
-    title: 'E-Commerce Account Management Service in Delhi | Kriscel tech',
-    description: 'Optimize your E-Commerce platform with our expert Account Management System service in Delhi. Track, manage, & automate accounts to save time',
+    title: 'E-ccomerce Account Creation Service Provider in Delhi | Kriscel tech',
+    description: 'Get a Professional E-Commerce account creation services Provider in Delhi. Boost your online sales with expert setup and marketplace support.',
     url: 'https://kriscel.com/account-creation',
     siteName: 'Kriscel Tech',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'E-Commerce Account Management Service in Delhi | Kriscel tech',
-    description: 'Optimize your E-Commerce platform with our expert Account Management System service in Delhi. Track, manage, & automate accounts to save time',
+    title: 'E-ccomerce Account Creation Service Provider in Delhi | Kriscel tech',
+    description: 'Get a Professional E-Commerce account creation services Provider in Delhi. Boost your online sales with expert setup and marketplace support.',
   },
   alternates: {
     canonical: 'https://kriscel.com/account-creation',

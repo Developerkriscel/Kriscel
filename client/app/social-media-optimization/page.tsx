@@ -227,8 +227,7 @@ export default function SocialMediaOptimization() {
                 Social Growth Experts
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Social Media <br className="hidden md:block" />
-                Optimization <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Impact.</span>
+                Top Social Media Optimization Service Provider in Delhi NCR
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Grow your online presence through smart and result-driven social media strategies. Increase engagement, drive traffic, and boost conversions across all major platforms.

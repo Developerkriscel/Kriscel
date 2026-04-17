@@ -209,8 +209,7 @@ export default function GMBCreation() {
                 Local Visibility Experts
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                GMB Creation <br className="hidden md:block" />
-                & Optimization <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Service.</span>
+                GMB Creation Service in Delhi | Boost Local Business Visibility
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Professional GMB Creation Service in Delhi to help your business appear on Google Maps & Search, boost local visibility, and attract new customers instantly.

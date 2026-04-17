@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Best Employee Task Management System | Kriscel tech',
-  description: 'Assign tasks, track daily progress, and visibly improve team productivity with our streamlined automated workflow systems.',
+  description: 'Best Employee Task Management System | Kriscel tech',
   keywords: 'Employee Task Management System, Workflow Automation Software, Team Productivity Tool',
   openGraph: {
     title: 'Best Employee Task Management System | Kriscel tech',
-    description: 'Assign tasks, track daily progress, and visibly improve team productivity with our streamlined automated workflow systems.',
+    description: 'Best Employee Task Management System | Kriscel tech',
     url: 'https://kriscel.com/employee-task-management-system',
     siteName: 'Kriscel Tech',
     type: 'website',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Best Employee Task Management System | Kriscel tech',
-    description: 'Assign tasks, track daily progress, and visibly improve team productivity with our streamlined automated workflow systems.',
+    description: 'Best Employee Task Management System | Kriscel tech',
   },
   alternates: {
     canonical: 'https://kriscel.com/employee-task-management-system',

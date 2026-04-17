@@ -209,8 +209,7 @@ export default function PaidAdsManagement() {
                 Performance Marketing
               </div>
               <h1 className="hero-element text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-950 leading-[0.95] uppercase mb-4">
-                Paid Ads <br className="hidden md:block" />
-                Management <span className="text-accent italic font-serif leading-normal normal-case mt-1 text-3xl md:text-4xl lg:text-5xl block">Service.</span>
+                Paid Ads Management Services in Delhi | Drive Targeted Leads
               </h1>
               <p className="hero-element text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-lg mb-6">
                 Maximize ROI with data-driven Paid Ads Management in Delhi NCR. From Pay-per-click to targeted display campaigns, we deliver precision marketing.
