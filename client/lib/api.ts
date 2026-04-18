@@ -10,7 +10,7 @@ if (rawUrl && !rawUrl.endsWith('/api')) {
   rawUrl = `${rawUrl}/api`;
 }
 const configuredUrl = rawUrl;
-const defaultProdUrl = 'https://kriscel.onrender.com/api';
+const defaultProdUrl = 'https://api.kriscel.com/api';
 
 export const API_URL = 
   (configuredUrl && configuredUrl.startsWith('http')) 

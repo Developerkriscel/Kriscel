@@ -36,15 +36,21 @@ app.use(express.json());
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
-  'https://kriscel.vercel.app'
+  'https://kriscel.vercel.app',
+  'https://www.kriscel.com',
+  'http://www.kriscel.com'
 ];
 if (process.env.CLIENT_URL) {
-  allowedOrigins.push(process.env.CLIENT_URL);
+  allowedOrigins.push(
+    ...process.env.CLIENT_URL
+      .split(',')
+      .map((url) => url.trim())
+      .filter(Boolean)
+  );
 }
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl) or matching allowed origins
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -54,6 +60,7 @@ app.use(cors({
   },
   credentials: true
 }));
+app.options('*', cors());
 app.use(helmet({
   crossOriginResourcePolicy: false, // Required for cross-origin images
 }));
