@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     question: "How should I choose a web design partner?",
-    answer: "Choose a partner by reviewing their portfolio, understanding their design process, reading client testimonials, and ensuring they have a strong grasp of both aesthetics and technical usability."
+    answer: "Choose a partner by reviewing their portfolio, understanding their design process, and ensuring they have a strong grasp of both aesthetics and technical usability."
   }
 ];
 

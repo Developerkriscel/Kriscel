@@ -133,7 +133,7 @@ async function scrapeAndGenerate() {
       const isNoise = (str) => {
         const lower = str.toLowerCase();
         return [
-          'choose', 'excellifes', 'excel lifes', 'testimonial', 'contact', 'blog', 
+          'choose', 'excellifes', 'excel lifes', 'contact', 'blog', 
           'read more', 'learn more', 'about us', 'get in touch', 'our solutions', 
           'services', 'home', 'business automation', 'digital marketing'
         ].some(w => lower.includes(w));

@@ -205,7 +205,7 @@ export default function SolutionsFullPage() {
   };
 
   const wrapHighlights = (text: string, words: string[], accent: string) => {
-    let parts = text.split(new RegExp(`(${words.join('|')})`, 'gi'));
+    const parts = text.split(new RegExp(`(${words.join('|')})`, 'gi'));
     return parts.map((part, index) => {
       const match = words.find(w => w.toLowerCase() === part.toLowerCase());
       if (match) {

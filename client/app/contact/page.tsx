@@ -92,7 +92,7 @@ export default function ContactPage() {
               >
                 {[
                   { val: "500%", label: "Growth Rate" },
-                  { val: "200+", label: "Happy Clients" },
+                  { val: "200+", label: "Projects Delivered" },
                   { val: "5★", label: "Avg Rating" },
                 ].map((s, i) => (
                   <div key={i} className="bg-white/5 border border-white/8 rounded-2xl p-4 text-center">

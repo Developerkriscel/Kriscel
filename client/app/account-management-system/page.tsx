@@ -18,7 +18,7 @@ if (typeof window !== "undefined") {
 const faqs = [
   {
     question: "What is an account management system?",
-    answer: "An account management system is software that helps businesses manage customer accounts, track interactions, and store important account information in one centralized platform. It enables teams to maintain strong relationships with clients and manage customer data efficiently."
+    answer: "An account management system is software that helps businesses manage customer accounts, track interactions, and store important account information in one centralized platform. It enables teams to maintain strong relationships with customers and manage customer data efficiently."
   },
   {
     question: "Why is account management important for businesses?",
@@ -110,7 +110,7 @@ const KriscelFeatures = [
   },
   {
     title: "Seamless Communication & Support",
-    desc: "Stay connected with your clients and internal teams through integrated chat and ticket systems ensuring faster issue resolution and smoother coordination."
+    desc: "Stay connected with customers and internal teams through integrated chat and ticket systems ensuring faster issue resolution and smoother coordination."
   },
   {
     title: "Scalable & Secure System",

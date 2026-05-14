@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import ClientsMarquee from "@/components/ClientsMarquee";
 import AboutPreview from "@/components/AboutPreview";
 import ConnectivityHub from "@/components/ConnectivityHub";
 import AIPowerhouse from "@/components/AIPowerhouse";
@@ -9,7 +8,6 @@ import ParallaxSection from "@/components/ParallaxSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import GlobeConnectivity from "@/components/GlobeConnectivity";
 import ServicesPreview from "@/components/ServicesPreview";
-import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import SectionReveal from "@/components/SectionReveal";
 import CustomCursor from "@/components/CustomCursor";
@@ -31,11 +29,9 @@ export default function Home() {
         <SectionReveal><PersonaSection /></SectionReveal>
         <StickyScrollSection />
         <SectionReveal><ParallaxSection /></SectionReveal>
-        <ClientsMarquee />
         <SectionReveal><IndustriesSection /></SectionReveal>
         <SectionReveal><GlobeConnectivity /></SectionReveal>
         <SectionReveal><ServicesPreview /></SectionReveal>
-        <SectionReveal><Testimonials /></SectionReveal>
         <StatTickerCTA />
         <SectionReveal><FAQ /></SectionReveal>
       </div>
