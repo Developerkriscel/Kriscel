@@ -99,6 +99,12 @@ export default function AdminMessages() {
                  {msg.message}
                </div>
 
+               {msg.requirement && (
+                 <div className="mt-4 pt-4 border-t border-slate-800/50 text-xs text-slate-400">
+                   <strong className="text-slate-300">Requirement:</strong> {msg.requirement}
+                 </div>
+               )}
+
                {msg.phone && (
                  <div className="mt-4 pt-4 border-t border-slate-800/50 text-xs text-slate-400">
                    <strong className="text-slate-300">Phone:</strong> {msg.phone}

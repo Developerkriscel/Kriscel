@@ -192,11 +192,11 @@ const saveSheetConfigs = async (configs) => {
 // Submit a contact request
 app.post('/api/contact', async (req, res) => {
   try {
-    const { name, email, phone, subject, message } = req.body;
-    if (!name || !email || !subject || !message) {
+    const { name, email, phone, requirement, subject, message } = req.body;
+    if (!name || !email || !requirement || !subject || !message) {
       return res.status(400).json({ success: false, error: 'Please provide all required fields' });
     }
-    const newContact = await Contact.create({ name, email, phone, subject, message });
+    const newContact = await Contact.create({ name, email, phone, requirement, subject, message });
 
     // ── Sync to all LIVE sheets (fire-and-forget) ──
     const configs = await getSheetConfigs();
@@ -204,6 +204,7 @@ app.post('/api/contact', async (req, res) => {
     if (liveSheets.length > 0) {
       const rowData = {
         Name: name, Email: email, Phone: phone || '',
+        Requirement: requirement,
         Subject: subject, Message: message,
         Date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
       };
@@ -376,6 +377,7 @@ app.post('/api/contact/sync-sheet', protect, async (req, res) => {
     for (const c of contacts) {
       const ok = await syncRowToSheet(sheet.url, {
         Name: c.name, Email: c.email, Phone: c.phone || '',
+        Requirement: c.requirement || '',
         Subject: c.subject, Message: c.message,
         Date: new Date(c.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
       });
@@ -400,6 +402,7 @@ app.get('/api/contact/export', protect, async (req, res) => {
       Name: c.name,
       Email: c.email,
       Phone: c.phone || '',
+      Requirement: c.requirement || '',
       Subject: c.subject,
       Message: c.message,
       Date: new Date(c.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })

@@ -6,65 +6,14 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { API_URL } from "@/lib/api";
-
-const SOLUTIONS_COLS = [
-  [
-    {
-      title: "Business Automation",
-      href: "/business-automation",
-      links: [
-        { name: "Inventory Management System", href: "/inventory-management-system" },
-        { name: "Production Management System", href: "/production-management-system" },
-        { name: "Purchase Management System", href: "/purchase-management-system" },
-        { name: "HR Management System", href: "/hr-management-system" },
-        { name: "Employee Task Management System", href: "/employee-task-management-system" },
-        { name: "Account Management System", href: "/account-management-system" },
-      ]
-    }
-  ],
-  [
-    {
-      title: "Digital Marketing",
-      href: "/digital-marketing",
-      links: [
-        { name: "Search Engine Optimization (SEO)", href: "/search-engine-optimization" },
-        { name: "Social media optimization (SMO)", href: "/social-media-optimization" },
-        { name: "Paid Ads Management", href: "/paid-ads-management" },
-        { name: "GMB Creation", href: "/gmb-creation" },
-        { name: "Content Marketing", href: "/content-marketing" },
-        { name: "Web Development", href: "/web-development" },
-        { name: "Web Designing", href: "/web-designing" },
-        { name: "Online reputation Management", href: "/online-reputation-management" },
-        { name: "Indiamart Account Management", href: "/indiamart-account-management" },
-      ]
-    }
-  ],
-  [
-    {
-      title: "Ecommerce Services",
-      href: "/ecommerce-services",
-      links: [
-        { name: "Account Creation", href: "/account-creation" },
-        { name: "Account Management", href: "/account-management" },
-        { name: "Catalog Management", href: "/catalog-management" },
-        { name: "ADS Campaign Management", href: "/ads-campaign-management" },
-      ]
-    },
-    {
-      title: "Services",
-      links: [
-        { name: "Recruitment", href: "/recruitment" }
-      ]
-    }
-  ]
-];
+import { mergeDynamicServices, SOLUTIONS_COLS, type DynamicServiceOption, type SolutionColumns } from "@/lib/solution-options";
 
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
-  const [dynamicSolutions, setDynamicSolutions] = useState(SOLUTIONS_COLS);
+  const [dynamicSolutions, setDynamicSolutions] = useState<SolutionColumns>(SOLUTIONS_COLS);
 
   useEffect(() => {
     fetch(`${API_URL}/services`)
@@ -74,22 +23,7 @@ export default function Navbar() {
       })
       .then(data => {
         if(data && data.success && data.data) {
-          const newCols = JSON.parse(JSON.stringify(SOLUTIONS_COLS));
-          data.data.forEach((svc: any) => {
-             let found = false;
-             for (let col = 0; col < newCols.length; col++) {
-               for (let block = 0; block < newCols[col].length; block++) {
-                 if (newCols[col][block].title === svc.category) {
-                   newCols[col][block].links.push({ name: svc.title, href: `/${svc.slug}` });
-                   found = true;
-                 }
-               }
-             }
-             if(!found && svc.category) {
-               newCols[2].push({ title: svc.category, links: [{ name: svc.title, href: `/${svc.slug}` }] });
-             }
-          });
-          setDynamicSolutions(newCols);
+          setDynamicSolutions(mergeDynamicServices(data.data as DynamicServiceOption[]));
         }
       })
       .catch(err => console.error("Error fetching dynamic services", err));

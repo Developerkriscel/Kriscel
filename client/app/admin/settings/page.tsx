@@ -228,10 +228,10 @@ export default function SettingsPage() {
           <div className="mt-3 bg-slate-900 rounded-xl p-4 font-mono text-[10px] text-emerald-300 overflow-x-auto whitespace-pre">{`function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Name','Email','Phone','Subject','Message','Date']);
+    sheet.appendRow(['Name','Email','Phone','Requirement','Subject','Message','Date']);
   }
   var data = JSON.parse(e.postData.contents);
-  sheet.appendRow([data.Name, data.Email, data.Phone, data.Subject, data.Message, data.Date]);
+  sheet.appendRow([data.Name, data.Email, data.Phone, data.Requirement, data.Subject, data.Message, data.Date]);
   return ContentService.createTextOutput('OK');
 }`}</div>
         </div>

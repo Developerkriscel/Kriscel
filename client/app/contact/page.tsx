@@ -1,12 +1,12 @@
 "use client";
 
-import type { Metadata } from "next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, CheckCircle2, XCircle, ArrowRight, Clock, Loader2 } from "lucide-react";
+import { Phone, Mail, CheckCircle2, XCircle, ArrowRight, Clock, Loader2, ChevronDown, ChevronRight } from "lucide-react";
 import { API_URL } from "../../lib/api";
+import { mergeDynamicServices, SOLUTIONS_COLS, type DynamicServiceOption, type SolutionColumns } from "@/lib/solution-options";
 
 // Real-time email validator
 const validateEmail = (email: string) => {
@@ -15,10 +15,40 @@ const validateEmail = (email: string) => {
 };
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", requirement: "", subject: "", message: "" });
+  const [requirementOptions, setRequirementOptions] = useState<SolutionColumns>(SOLUTIONS_COLS);
+  const [requirementOpen, setRequirementOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [emailStatus, setEmailStatus] = useState<"idle" | "valid" | "invalid">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const requirementRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    fetch(`${API_URL}/services`)
+      .then((res) => {
+        if (!res.ok) throw new Error("API down");
+        return res.json();
+      })
+      .then((data) => {
+        if (data?.success && data.data) {
+          setRequirementOptions(mergeDynamicServices(data.data as DynamicServiceOption[]));
+        }
+      })
+      .catch(() => {
+        setRequirementOptions(SOLUTIONS_COLS);
+      });
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (requirementRef.current && !requirementRef.current.contains(event.target as Node)) {
+        setRequirementOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleEmailChange = (val: string) => {
     setFormData(prev => ({ ...prev, email: val }));
@@ -29,6 +59,7 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (emailStatus !== "valid") { setErrorMsg("Please enter a valid email address."); return; }
+    if (!formData.requirement) { setErrorMsg("Please select your requirement."); return; }
     setErrorMsg("");
     setStatus("loading");
     try {
@@ -40,7 +71,7 @@ export default function ContactPage() {
       const data = await res.json();
       if (data.success) {
         setStatus("success");
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", requirement: "", subject: "", message: "" });
         setEmailStatus("idle");
       } else {
         setStatus("error");
@@ -50,6 +81,11 @@ export default function ContactPage() {
       setStatus("error");
       setErrorMsg("Network error. Please try again.");
     }
+  };
+
+  const selectRequirement = (requirement: string) => {
+    setFormData({ ...formData, requirement });
+    setRequirementOpen(false);
   };
 
   const inputClass = "w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-accent focus:bg-white/8 focus:ring-2 focus:ring-accent/20 transition-all duration-300 text-sm font-medium";
@@ -175,6 +211,66 @@ export default function ContactPage() {
                   <div>
                     <label className="block text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Phone Number</label>
                     <input type="tel" placeholder="+91 98765 43210" className={inputClass} value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} />
+                  </div>
+
+                  {/* Requirement */}
+                  <div ref={requirementRef} className="relative">
+                    <label className="block text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Requirement *</label>
+                    <button
+                      type="button"
+                      onClick={() => setRequirementOpen((open) => !open)}
+                      className={`${inputClass} flex items-center justify-between text-left ${formData.requirement ? "text-white" : "text-white/30"} ${requirementOpen ? "border-accent bg-white/8 ring-2 ring-accent/20" : ""}`}
+                      aria-expanded={requirementOpen}
+                    >
+                      <span>{formData.requirement || "Select your requirement"}</span>
+                      <ChevronDown size={18} className={`shrink-0 text-slate-500 transition-transform ${requirementOpen ? "rotate-180 text-accent" : ""}`} />
+                    </button>
+
+                    <div
+                      className={`absolute top-full right-0 z-[80] mt-2 w-[min(820px,calc(100vw-3rem))] bg-white border border-gray-100 rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] p-8 transition-all duration-300 origin-top text-left ${requirementOpen ? "opacity-100 scale-100 visible translate-y-0" : "opacity-0 scale-95 invisible -translate-y-2 pointer-events-none"}`}
+                    >
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                        {requirementOptions.map((column, idx) => (
+                          <div key={idx} className="flex flex-col gap-10 min-w-[220px]">
+                            {column.map((category, cIdx) => (
+                              <div key={cIdx} className="flex flex-col">
+                                <button
+                                  type="button"
+                                  onClick={() => selectRequirement(category.title)}
+                                  className="text-left text-xs font-black tracking-[0.2em] text-accent uppercase mb-4 border-b border-gray-100 pb-2 hover:text-brand-navy transition-colors block"
+                                >
+                                  {category.title}
+                                </button>
+                                <ul className="flex flex-col gap-3">
+                                  {category.links.map((item, i) => (
+                                    <li key={`${item.href}-${i}`}>
+                                      <button
+                                        type="button"
+                                        onClick={() => selectRequirement(`${category.title} > ${item.name}`)}
+                                        className="text-gray-600 hover:text-accent hover:translate-x-1 flex items-center gap-2 transition-all text-[13px] group text-left"
+                                      >
+                                        <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300">
+                                          <ChevronRight size={12} className="text-accent" />
+                                        </span>
+                                        {item.name}
+                                      </button>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <input
+                      tabIndex={-1}
+                      required
+                      value={formData.requirement}
+                      onChange={() => {}}
+                      className="sr-only"
+                      aria-hidden="true"
+                    />
                   </div>
 
                   {/* Subject */}

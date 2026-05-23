@@ -18,6 +18,11 @@ const ContactSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  requirement: {
+    type: String,
+    required: [true, 'Please select a requirement'],
+    trim: true,
+  },
   subject: {
     type: String,
     required: [true, 'Please provide a subject']
