@@ -92,6 +92,390 @@ const benefits = [
   }
 ];
 
+const showcaseCards = [
+  {
+    title: "Kriscel Tech Agency Website",
+    subtitle:
+      "A high-performance agency website showcasing automation, AI solutions, software development, and digital transformation.",
+    description:
+      "This brand platform demonstrates expertise across automation, software development, AI integration, and digital marketing using advanced animations, conversion-focused layouts, and strategic hierarchy.",
+    image: "/images/kriscel-agency-showcase.png",
+    meta: "Showcase Website",
+    accent: "from-accent/20 to-indigo-500/10",
+    link: "https://kriscel.com/",
+    tags: [
+      "Service ecosystem presentation",
+      "AI & automation showcase",
+      "Interactive animations",
+      "Lead generation funnels",
+      "React.js",
+      "GSAP",
+      "Framer Motion",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "Symo Developers",
+    subtitle:
+      "A premium real estate and property development website designed to showcase residential and commercial projects through modern architecture-inspired design and conversion-focused user experiences.",
+    description:
+      "Symo Developers was created to establish a strong digital presence for a real estate and construction brand. The site communicates trust, quality craftsmanship, and project excellence while generating qualified leads from potential buyers and investors through large visual sections, project highlights, and clear calls-to-action.",
+    image: "/images/showcase/symo-developers-home-v2.png",
+    meta: "Property Website",
+    accent: "from-amber-400/20 to-yellow-500/10",
+    link: "https://symo-devlopers.vercel.app/",
+    tags: [
+      "Property showcase sections",
+      "Modern architectural UI",
+      "Lead generation forms",
+      "Trust-building company overview",
+      "React.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Lisha Engineers",
+    subtitle:
+      "An infrastructure and construction website designed to present engineering credibility through a bold hero section, clear service navigation, and a trust-first visual style.",
+    description:
+      "The page highlights large-scale civil work with a strong brand message, combining project-driven storytelling, structured navigation, and a high-impact visual layout to communicate experience across roads, metros, flyovers, bridges, and highways.",
+    image: "/images/showcase/lisha-engineers-home.png",
+    meta: "Infrastructure Website",
+    accent: "from-slate-400/20 to-blue-500/10",
+    link: "https://lisha-engineers-8zrk.onrender.com/",
+    tags: [
+      "Construction brand presentation",
+      "Engineering credibility",
+      "Hero-led storytelling",
+      "Project showcase layout",
+      "Trust-focused UI",
+      "React.js",
+      "Tailwind CSS",
+      "Responsive Design",
+    ],
+  },
+  {
+    title: "Kriscel EV",
+    subtitle:
+      "A premium electric scooter and bike website designed to showcase modern mobility, performance, and a futuristic brand experience.",
+    description:
+      "Kriscel EV presents electric scooters and bikes through a bold hero section, high-contrast visuals, and conversion-focused navigation that highlights range, charging, and test ride booking.",
+    image: "/images/showcase/kriscel-ev-home.png",
+    meta: "Electric Mobility Website",
+    accent: "from-slate-300/20 to-cyan-500/10",
+    link: "https://kriscel-ev-o82g.onrender.com/",
+    tags: [
+      "Electric vehicle hero showcase",
+      "Premium mobility branding",
+      "Feature-rich product sections",
+      "Call-to-action focused layout",
+      "React.js",
+      "Tailwind CSS",
+      "Responsive Design",
+      "Modern UI",
+    ],
+  },
+  {
+    title: "Shoes Manufacturers Website",
+    subtitle:
+      "A modern B2B footwear manufacturing platform built to attract wholesalers, distributors, and international buyers.",
+    description:
+      "This experience emphasizes manufacturing expertise, production quality, and scalability through visual storytelling, factory highlights, and interactive product displays.",
+    image: "/images/showcase/shoes-manufacturers-home-v2.png",
+    meta: "Footwear Manufacturing",
+    accent: "from-stone-400/20 to-amber-500/10",
+    link: "https://shoes-manufacturers.onrender.com/",
+    mediaClassName: "relative h-[215px] sm:h-[235px] overflow-hidden bg-[#f7ebd2]",
+    imageClassName: "object-cover object-top",
+    imageHoverClassName: "group-hover:scale-[1.05]",
+    useNativeImage: true,
+    tags: [
+      "Manufacturing process showcase",
+      "Product catalog",
+      "Factory capability sections",
+      "Inquiry generation forms",
+      "React.js",
+      "GSAP",
+      "Tailwind CSS",
+      "Node.js",
+    ],
+  },
+  {
+    title: "Jewelry E-Commerce Website",
+    subtitle:
+      "A luxury jewelry showcase designed to elevate premium products through immersive visuals and refined shopping journeys.",
+    description:
+      "Built to create a high-end digital presence for a jewelry brand, the layout focuses on luxury, craftsmanship, and exclusivity through elegant typography, premium spacing, and smooth interaction design.",
+    image: "/images/showcase/jewellery-ecommerce-home.png",
+    meta: "Luxury E-Commerce",
+    accent: "from-stone-200/20 to-amber-300/10",
+    link: "https://jewellery-09ej.onrender.com/",
+    tags: [
+      "Luxury UI design",
+      "Product showcase galleries",
+      "Smooth GSAP animations",
+      "Mobile-first responsive design",
+      "React.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Luxury Watches Website",
+    subtitle:
+      "A premium watch brand website focused on craftsmanship, heritage, and product excellence.",
+    description:
+      "The design showcases luxury timepieces through cinematic product presentation, smooth transitions, and high-end aesthetics that feel elevated and timeless.",
+    image: "/images/showcase/kriscel-watches-home.png",
+    meta: "Luxury Watches",
+    accent: "from-stone-300/20 to-amber-400/10",
+    link: "https://kriscel-watches.onrender.com/",
+    tags: [
+      "Luxury product displays",
+      "Product collections",
+      "Scroll storytelling",
+      "Premium animations",
+      "React.js",
+      "GSAP",
+      "Tailwind CSS",
+      "Responsive Design",
+    ],
+  },
+  {
+    title: "Cookie Haven",
+    subtitle:
+      "A premium cookies website showcasing handcrafted cookies through mouth-watering visuals and modern design.",
+    description:
+      "Cookie Haven presents signature cookies and featured collections through an attractive, engaging digital experience that highlights freshness, quality, and brand personality.",
+    image: "/images/showcase/cookie-haven-home-v2.png",
+    meta: "Bakery E-Commerce",
+    accent: "from-amber-200/20 to-orange-400/10",
+    link: "https://cookies-o829.onrender.com/",
+    mediaClassName: "relative h-[215px] sm:h-[235px] overflow-hidden bg-[#f7ebd2]",
+    imageClassName: "object-cover object-top",
+    imageHoverClassName: "group-hover:scale-[1.05]",
+    overlayClassName: "bg-transparent",
+    useNativeImage: true,
+    tags: [
+      "Cookie showcase sections",
+      "Featured product collections",
+      "Modern bakery UI",
+      "Smooth scroll animations",
+      "React.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Fire Safety Website",
+    subtitle:
+      "A professional corporate website for the fire protection industry focused on trust, compliance, and lead generation.",
+    description:
+      "The platform presents a fire safety company as an industry leader through structured information architecture, clear service categorization, and trust-focused design.",
+    image: "/images/showcase/fire-safety-home.png",
+    meta: "Fire Protection",
+    accent: "from-red-400/20 to-orange-500/10",
+    link: "https://fire-safety-website.onrender.com/",
+    tags: [
+      "Service showcases",
+      "Compliance information",
+      "Product catalogs",
+      "Quote request system",
+      "React.js",
+      "GSAP",
+      "Tailwind CSS",
+      "Form Integration",
+    ],
+  },
+  {
+    title: "Vidhi Satya Law Associates",
+    subtitle:
+      "A professional legal services website designed to establish authority, trust, and credibility.",
+    description:
+      "The platform communicates legal expertise through a structured interface, intuitive navigation, and a trust-focused design system that helps clients find the right information quickly.",
+    image: "/images/showcase/vidhi-satya-home-v1.png",
+    meta: "Legal Services",
+    accent: "from-emerald-400/20 to-lime-500/10",
+    link: "https://vidhisatya.com/",
+    tags: [
+      "Legal service showcase",
+      "Attorney profiles",
+      "Consultation forms",
+      "Professional UI design",
+      "React.js",
+      "Responsive Design",
+      "SEO Optimization",
+      "Form Integrations",
+    ],
+  },
+  {
+    title: "Indian Foods",
+    subtitle:
+      "A vibrant restaurant website celebrating authentic Indian cuisine through engaging food presentation, modern UI design, and seamless customer interaction.",
+    description:
+      "Indian Foods was developed to create a compelling online presence for an Indian food brand. The platform showcases traditional dishes, culturally inspired storytelling, and intuitive navigation to create a memorable experience that reflects the richness of Indian cuisine while improving customer engagement and food exploration.",
+    image: "/images/showcase/indian-foods-home-v1.png",
+    meta: "Restaurant Website",
+    accent: "from-orange-400/20 to-amber-500/10",
+    link: "https://indian-foods-malvika.vercel.app/",
+    tags: [
+      "Interactive menu sections",
+      "Food showcase galleries",
+      "Mobile-first experience",
+      "Customer engagement sections",
+      "React.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Restaurant Royale",
+    subtitle:
+      "A premium restaurant website showcasing culinary experiences through immersive food visuals and elegant layouts.",
+    description:
+      "Restaurant Royale presents signature dishes, dining atmosphere, and menu discovery through a modern, visually rich restaurant experience.",
+    image: "/images/showcase/restaurant-royale-home-v1.png",
+    meta: "Restaurant Website",
+    accent: "from-rose-400/20 to-orange-500/10",
+    link: "https://restaurants-mjrx.onrender.com/",
+    tags: [
+      "Food showcase sections",
+      "Interactive menu presentation",
+      "Featured dishes display",
+      "Contact and reservation sections",
+      "React.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Handicrafts Heritage",
+    subtitle:
+      "A handcrafted products showcase website highlighting traditional artistry through elegant visuals and a modern user experience.",
+    description:
+      "Handicrafts Heritage presents handmade products and artisan collections through a clean, premium layout that strengthens brand credibility and visual storytelling.",
+    image: "/images/showcase/handicrafts-heritage-home-v1.png",
+    meta: "Handicrafts Website",
+    accent: "from-amber-400/20 to-stone-500/10",
+    link: "https://handicrafts-3789.onrender.com/",
+    tags: [
+      "Handicraft product showcase sections",
+      "Artisan collection displays",
+      "Modern handcrafted-inspired UI",
+      "Smooth scroll animations",
+      "React.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+    ],
+  },
+];
+
+type ShowcaseCardData = (typeof showcaseCards)[number] & {
+  mediaClassName?: string;
+  imageClassName?: string;
+  imageHoverClassName?: string;
+  overlayClassName?: string;
+  useNativeImage?: boolean;
+};
+
+function ShowcaseCard({
+  card,
+  onHoverChange,
+}: {
+  card: ShowcaseCardData;
+  onHoverChange?: (isHovering: boolean) => void;
+}) {
+  const imageClassName = card.imageClassName ?? "object-cover";
+  const imageHoverClassName = card.imageHoverClassName ?? "group-hover:scale-[1.05]";
+  const overlayClassName =
+    card.overlayClassName ?? "bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent";
+  const mediaClassName = card.mediaClassName ?? "relative h-[215px] sm:h-[235px] overflow-hidden bg-gradient-to-br";
+  const useNativeImage = card.useNativeImage ?? false;
+
+  return (
+    <article
+      className="reveal-card relative shrink-0 w-[62vw] sm:w-[330px] lg:w-[430px] rounded-[1.3rem] bg-slate-50 border border-slate-100 shadow-[0_14px_34px_-18px_rgba(0,0,0,0.15)] overflow-hidden group transition-all duration-300 hover:-translate-y-3 hover:scale-[1.07] hover:z-20 hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.24)]"
+      onPointerEnter={() => onHoverChange?.(true)}
+      onPointerLeave={() => onHoverChange?.(false)}
+    >
+      <div className={`${mediaClassName} ${card.mediaClassName ? "" : card.accent}`}>
+        {useNativeImage ? (
+          // Native image avoids Next/Image optimization issues for this specific screenshot asset.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={card.image}
+            alt={card.title}
+            className={`${imageClassName} absolute inset-0 h-full w-full transition-transform duration-700 ${imageHoverClassName}`}
+          />
+        ) : (
+          <Image
+            src={card.image}
+            alt={card.title}
+            fill
+            className={`${imageClassName} transition-transform duration-700 ${imageHoverClassName}`}
+            sizes="(max-width: 640px) 62vw, (max-width: 1024px) 330px, 430px"
+          />
+        )}
+        <div className={`absolute inset-0 ${overlayClassName}`} />
+        <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-slate-700 shadow-sm">
+          <span className="h-2 w-2 rounded-full bg-accent" />
+          {card.meta}
+        </div>
+      </div>
+
+      <div className="p-2.5 sm:p-3 bg-white">
+        <h4 className="text-base sm:text-lg font-black text-slate-950 tracking-tight mb-1.5">
+          {card.title}
+        </h4>
+        <p className="text-slate-500 text-[11px] sm:text-[12px] leading-relaxed mb-2">
+          {card.subtitle}
+        </p>
+        <p className="text-slate-500 text-[11px] sm:text-[12px] leading-relaxed mb-2.5">
+          {card.description}
+        </p>
+        <div className="flex flex-wrap gap-1 mb-2.5">
+          {card.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[9px] sm:text-[10px] text-slate-600"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-[9px] font-black uppercase tracking-[0.18em] text-slate-400">
+            Horizontal showcase
+          </span>
+          {card.link ? (
+            <Link
+              href={card.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-black text-accent"
+            >
+              Explore
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 text-xs font-black text-accent">
+              Explore
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </span>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
 const KriscelFeatures = [
   {
     title: "Professional Web Development Services",
@@ -299,6 +683,53 @@ export default function WebDevelopment() {
         </div>
       </section>
 
+      {/* HORIZONTAL SHOWCASE */}
+      <section className="relative z-10 py-12 bg-white border-y border-slate-100 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 mb-8 reveal-item">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div className="max-w-xl">
+              <h2 className="text-xs font-black text-accent tracking-[0.2em] uppercase mb-2">Featured Builds</h2>
+              <h3 className="text-3xl md:text-4xl font-black text-slate-950 tracking-tight leading-[0.95]">
+                Our Work. One Swipe Away.
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-[100vw] mx-auto px-6">
+          <div
+            className="overflow-hidden cursor-grab active:cursor-grabbing select-none touch-pan-y"
+            onPointerDown={handleShowcasePointerDown}
+            onPointerMove={handleShowcasePointerMove}
+            onPointerUp={endShowcaseDrag}
+            onPointerCancel={endShowcaseDrag}
+          >
+            <div
+              ref={showcaseTrackRef}
+              className="flex w-max gap-4 will-change-transform"
+            >
+              <div ref={showcaseFirstSetRef} className="flex w-max gap-4">
+                {showcaseCards.map((card, idx) => (
+                  <ShowcaseCard
+                    key={`set-a-${idx}`}
+                    card={card}
+                    onHoverChange={handleShowcaseHoverChange}
+                  />
+                ))}
+              </div>
+              <div className="flex w-max gap-4" aria-hidden="true">
+                {showcaseCards.map((card, idx) => (
+                  <ShowcaseCard
+                    key={`set-b-${idx}`}
+                    card={card}
+                    onHoverChange={handleShowcaseHoverChange}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* HORIZONTAL ROTATING CARDS - BENEFITS */}
       <section className="relative bg-slate-950 py-10 flex flex-col justify-center overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 w-full mb-6 relative z-10 text-center md:text-left reveal-item">
