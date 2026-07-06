@@ -142,7 +142,7 @@ const showcaseCards = [
       "An infrastructure and construction website designed to present engineering credibility through a bold hero section, clear service navigation, and a trust-first visual style.",
     description:
       "The page highlights large-scale civil work with a strong brand message, combining project-driven storytelling, structured navigation, and a high-impact visual layout to communicate experience across roads, metros, flyovers, bridges, and highways.",
-    image: "/images/showcase/lisha-engineers-home.png",
+    image: "/images/showcase/lisha-engineers-home-new.png",
     meta: "Infrastructure Website",
     accent: "from-slate-400/20 to-blue-500/10",
     link: "https://lisha-engineers-8zrk.onrender.com/",
@@ -402,7 +402,8 @@ function ShowcaseCard({
 
   return (
     <article
-      className="reveal-card relative shrink-0 w-[54vw] sm:w-[280px] lg:w-[340px] rounded-[1.1rem] bg-slate-50 border border-slate-100 shadow-[0_14px_34px_-18px_rgba(0,0,0,0.15)] overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:scale-[1.04] hover:z-20 hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.24)]"
+      className="reveal-card relative shrink-0 w-[54vw] sm:w-[280px] lg:w-[340px] rounded-[1.1rem] bg-slate-50 border border-slate-100 shadow-[0_14px_34px_-18px_rgba(0,0,0,0.15)] overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:scale-[1.04] hover:z-20 hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.24)] cursor-pointer"
+      data-showcase-link={card.link ?? ""}
       onPointerEnter={() => onHoverChange?.(true)}
       onPointerLeave={() => onHoverChange?.(false)}
     >
@@ -461,6 +462,7 @@ function ShowcaseCard({
               target="_blank"
               rel="noopener noreferrer"
               onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-1.5 text-[11px] font-black text-accent"
             >
               Explore
@@ -517,6 +519,7 @@ export default function WebDevelopment() {
   const showcasePauseUntilRef = useRef(0);
   const showcaseDragRef = useRef({
     isDragging: false,
+    hasMoved: false,
     startX: 0,
     startOffset: 0,
   });
@@ -637,11 +640,18 @@ export default function WebDevelopment() {
     });
   };
 
+  const openShowcaseCard = (link?: string) => {
+    if (!link) return;
+
+    window.open(link, "_blank", "noopener,noreferrer");
+  };
+
   const handleShowcasePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
     if (event.target instanceof Element && event.target.closest("a, button")) return;
 
     showcaseDragRef.current = {
       isDragging: true,
+      hasMoved: false,
       startX: event.clientX,
       startOffset: showcaseOffsetRef.current,
     };
@@ -651,6 +661,10 @@ export default function WebDevelopment() {
   const handleShowcasePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!showcaseDragRef.current.isDragging) return;
 
+    if (Math.abs(event.clientX - showcaseDragRef.current.startX) > 6) {
+      showcaseDragRef.current.hasMoved = true;
+    }
+
     showcaseOffsetRef.current =
       showcaseDragRef.current.startOffset + event.clientX - showcaseDragRef.current.startX;
     applyShowcaseOffset();
@@ -659,9 +673,16 @@ export default function WebDevelopment() {
   const endShowcaseDrag = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!showcaseDragRef.current.isDragging) return;
 
+    const shouldOpenCard = !showcaseDragRef.current.hasMoved;
     showcaseDragRef.current.isDragging = false;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+
+    if (shouldOpenCard) {
+      const elementAtRelease = document.elementFromPoint(event.clientX, event.clientY);
+      const cardElement = elementAtRelease?.closest("[data-showcase-link]") as HTMLElement | null;
+      openShowcaseCard(cardElement?.dataset.showcaseLink);
     }
   };
 
