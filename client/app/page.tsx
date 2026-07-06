@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import ClientsMarquee from "@/components/ClientsMarquee";
 import AboutPreview from "@/components/AboutPreview";
 import ConnectivityHub from "@/components/ConnectivityHub";
 import AIPowerhouse from "@/components/AIPowerhouse";
@@ -29,6 +30,7 @@ export default function Home() {
         <SectionReveal><PersonaSection /></SectionReveal>
         <StickyScrollSection />
         <SectionReveal><ParallaxSection /></SectionReveal>
+        <ClientsMarquee />
         <SectionReveal><IndustriesSection /></SectionReveal>
         <SectionReveal><GlobeConnectivity /></SectionReveal>
         <SectionReveal><ServicesPreview /></SectionReveal>

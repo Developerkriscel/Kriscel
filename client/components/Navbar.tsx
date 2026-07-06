@@ -104,6 +104,7 @@ export default function Navbar() {
               </div>
             </div>
 
+            <Link href="/clients" className="hover:text-accent transition-colors">Clients</Link>
             <Link href="/blogs" className="hover:text-accent transition-colors text-accent font-bold">Blogs</Link>
             <Link href="/careers" className="hover:text-accent transition-colors">Careers</Link>
           </nav>
@@ -189,6 +190,7 @@ export default function Navbar() {
               )}
             </div>
 
+            <Link href="/clients" onClick={() => setMobileOpen(false)} className="text-2xl font-bold text-foreground hover:text-accent transition-colors">Clients</Link>
             <Link href="/blogs" onClick={() => setMobileOpen(false)} className="text-2xl font-bold text-accent transition-colors">Blogs</Link>
             <Link href="/careers" onClick={() => setMobileOpen(false)} className="text-2xl font-bold text-foreground hover:text-accent transition-colors">Careers</Link>
           </div>

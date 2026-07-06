@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -455,15 +456,16 @@ function ShowcaseCard({
             Horizontal showcase
           </span>
           {card.link ? (
-            <Link
+            <a
               href={card.link}
               target="_blank"
               rel="noopener noreferrer"
+              onPointerDown={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-1.5 text-xs font-black text-accent"
             >
               Explore
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           ) : (
             <span className="inline-flex items-center gap-1.5 text-xs font-black text-accent">
               Explore
@@ -506,7 +508,132 @@ const KriscelFeatures = [
 export default function WebDevelopment() {
   const [mounted, setMounted] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
+  const showcaseTrackRef = useRef<HTMLDivElement>(null);
+  const showcaseFirstSetRef = useRef<HTMLDivElement>(null);
+  const showcaseViewportRef = useRef<HTMLDivElement>(null);
+  const showcaseAnimationRef = useRef<number | null>(null);
+  const showcaseOffsetRef = useRef(0);
+  const showcaseSpeedRef = useRef(0.55);
+  const showcasePauseUntilRef = useRef(0);
+  const showcaseDragRef = useRef({
+    isDragging: false,
+    startX: 0,
+    startOffset: 0,
+  });
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const applyShowcaseOffset = () => {
+    const track = showcaseTrackRef.current;
+    const firstSet = showcaseFirstSetRef.current;
+    const setWidth = firstSet?.offsetWidth ?? 0;
+
+    if (!track || setWidth === 0) return;
+
+    if (showcaseOffsetRef.current <= -setWidth) {
+      showcaseOffsetRef.current += setWidth;
+    }
+
+    if (showcaseOffsetRef.current > 0) {
+      showcaseOffsetRef.current -= setWidth;
+    }
+
+    gsap.set(track, { x: showcaseOffsetRef.current });
+  };
+
+  const handleShowcaseHoverChange = (isHovering: boolean) => {
+    showcaseSpeedRef.current = isHovering ? 0.14 : 0.55;
+  };
+
+  const getShowcaseCards = () => {
+    const firstSet = showcaseFirstSetRef.current;
+    if (!firstSet) return [];
+
+    return Array.from(firstSet.querySelectorAll("article")) as HTMLElement[];
+  };
+
+  const getCenteredShowcaseIndex = () => {
+    const viewport = showcaseViewportRef.current;
+    const cards = getShowcaseCards();
+
+    if (!viewport || cards.length === 0) return 0;
+
+    const viewportRect = viewport.getBoundingClientRect();
+    const viewportCenter = viewportRect.left + viewportRect.width / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(cardCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  };
+
+  const snapShowcaseToIndex = (targetIndex: number) => {
+    const viewport = showcaseViewportRef.current;
+    const cards = getShowcaseCards();
+    const targetCard = cards[targetIndex];
+
+    if (!viewport || !targetCard) return;
+
+    const viewportRect = viewport.getBoundingClientRect();
+    const targetRect = targetCard.getBoundingClientRect();
+    const viewportCenter = viewportRect.left + viewportRect.width / 2;
+    const targetCenter = targetRect.left + targetRect.width / 2;
+
+    showcaseOffsetRef.current += viewportCenter - targetCenter;
+    showcasePauseUntilRef.current = Date.now() + 900;
+    applyShowcaseOffset();
+  };
+
+  const nudgeShowcase = (direction: "left" | "right") => {
+    const cards = getShowcaseCards();
+    if (cards.length === 0) return;
+
+    const currentIndex = getCenteredShowcaseIndex();
+    const nextIndex =
+      direction === "left"
+        ? (currentIndex - 1 + cards.length) % cards.length
+        : (currentIndex + 1) % cards.length;
+
+    snapShowcaseToIndex(nextIndex);
+  };
+
+  const handleShowcasePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.target instanceof Element && event.target.closest("a")) return;
+
+    showcaseDragRef.current = {
+      isDragging: true,
+      startX: event.clientX,
+      startOffset: showcaseOffsetRef.current,
+    };
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const handleShowcasePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!showcaseDragRef.current.isDragging) return;
+
+    showcaseOffsetRef.current =
+      showcaseDragRef.current.startOffset + event.clientX - showcaseDragRef.current.startX;
+    applyShowcaseOffset();
+  };
+
+  const endShowcaseDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!showcaseDragRef.current.isDragging) return;
+
+    showcaseDragRef.current.isDragging = false;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -568,6 +695,27 @@ export default function WebDevelopment() {
     }, containerRef);
 
     return () => ctx.revert();
+  }, [mounted]);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    const animateShowcase = () => {
+      if (!showcaseDragRef.current.isDragging && Date.now() >= showcasePauseUntilRef.current) {
+        showcaseOffsetRef.current -= showcaseSpeedRef.current;
+        applyShowcaseOffset();
+      }
+
+      showcaseAnimationRef.current = requestAnimationFrame(animateShowcase);
+    };
+
+    showcaseAnimationRef.current = requestAnimationFrame(animateShowcase);
+
+    return () => {
+      if (showcaseAnimationRef.current !== null) {
+        cancelAnimationFrame(showcaseAnimationRef.current);
+      }
+    };
   }, [mounted]);
 
   if (!mounted) return <div className="min-h-screen bg-white" />;
@@ -696,14 +844,33 @@ export default function WebDevelopment() {
           </div>
         </div>
 
-        <div className="max-w-[100vw] mx-auto px-6">
+        <div ref={showcaseViewportRef} className="relative max-w-[100vw] mx-auto px-6">
           <div
-            className="overflow-hidden cursor-grab active:cursor-grabbing select-none touch-pan-y"
+            className="relative overflow-hidden cursor-grab active:cursor-grabbing select-none touch-pan-y"
             onPointerDown={handleShowcasePointerDown}
             onPointerMove={handleShowcasePointerMove}
             onPointerUp={endShowcaseDrag}
             onPointerCancel={endShowcaseDrag}
           >
+            <div className="pointer-events-none absolute inset-y-1/2 left-0 right-0 z-20 hidden md:flex -translate-y-1/2 items-center justify-between px-2 lg:px-4">
+              <button
+                type="button"
+                onClick={() => nudgeShowcase("left")}
+                aria-label="Show previous web development project"
+                className="pointer-events-auto -ml-2 h-14 w-14 rounded-full border border-slate-200 bg-white/95 backdrop-blur-md text-slate-950 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] transition-all hover:-translate-x-0.5 hover:border-accent hover:text-accent hover:shadow-lg active:scale-95 flex items-center justify-center"
+              >
+                <ArrowLeft size={20} />
+              </button>
+              <button
+                type="button"
+                onClick={() => nudgeShowcase("right")}
+                aria-label="Show next web development project"
+                className="pointer-events-auto -mr-2 h-14 w-14 rounded-full bg-slate-950 text-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)] transition-all hover:translate-x-0.5 hover:bg-accent hover:shadow-lg active:scale-95 flex items-center justify-center"
+              >
+                <ArrowRight size={20} />
+              </button>
+            </div>
+
             <div
               ref={showcaseTrackRef}
               className="flex w-max gap-4 will-change-transform"
