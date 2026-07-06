@@ -188,7 +188,7 @@ const showcaseCards = [
     meta: "Footwear Manufacturing",
     accent: "from-stone-400/20 to-amber-500/10",
     link: "https://shoes-manufacturers.onrender.com/",
-    mediaClassName: "relative h-[215px] sm:h-[235px] overflow-hidden bg-[#f7ebd2]",
+    mediaClassName: "relative h-[165px] sm:h-[185px] overflow-hidden bg-[#f7ebd2]",
     imageClassName: "object-cover object-top",
     imageHoverClassName: "group-hover:scale-[1.05]",
     useNativeImage: true,
@@ -255,7 +255,7 @@ const showcaseCards = [
     meta: "Bakery E-Commerce",
     accent: "from-amber-200/20 to-orange-400/10",
     link: "https://cookies-o829.onrender.com/",
-    mediaClassName: "relative h-[215px] sm:h-[235px] overflow-hidden bg-[#f7ebd2]",
+    mediaClassName: "relative h-[165px] sm:h-[185px] overflow-hidden bg-[#f7ebd2]",
     imageClassName: "object-cover object-top",
     imageHoverClassName: "group-hover:scale-[1.05]",
     overlayClassName: "bg-transparent",
@@ -397,12 +397,12 @@ function ShowcaseCard({
   const imageHoverClassName = card.imageHoverClassName ?? "group-hover:scale-[1.05]";
   const overlayClassName =
     card.overlayClassName ?? "bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent";
-  const mediaClassName = card.mediaClassName ?? "relative h-[215px] sm:h-[235px] overflow-hidden bg-gradient-to-br";
+  const mediaClassName = card.mediaClassName ?? "relative h-[165px] sm:h-[185px] overflow-hidden bg-gradient-to-br";
   const useNativeImage = card.useNativeImage ?? false;
 
   return (
     <article
-      className="reveal-card relative shrink-0 w-[62vw] sm:w-[330px] lg:w-[430px] rounded-[1.3rem] bg-slate-50 border border-slate-100 shadow-[0_14px_34px_-18px_rgba(0,0,0,0.15)] overflow-hidden group transition-all duration-300 hover:-translate-y-3 hover:scale-[1.07] hover:z-20 hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.24)]"
+      className="reveal-card relative shrink-0 w-[54vw] sm:w-[280px] lg:w-[340px] rounded-[1.1rem] bg-slate-50 border border-slate-100 shadow-[0_14px_34px_-18px_rgba(0,0,0,0.15)] overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:scale-[1.04] hover:z-20 hover:shadow-[0_24px_48px_-14px_rgba(0,0,0,0.24)]"
       onPointerEnter={() => onHoverChange?.(true)}
       onPointerLeave={() => onHoverChange?.(false)}
     >
@@ -425,34 +425,34 @@ function ShowcaseCard({
           />
         )}
         <div className={`absolute inset-0 ${overlayClassName}`} />
-        <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-slate-700 shadow-sm">
+        <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700 shadow-sm">
           <span className="h-2 w-2 rounded-full bg-accent" />
           {card.meta}
         </div>
       </div>
 
-      <div className="p-2.5 sm:p-3 bg-white">
-        <h4 className="text-base sm:text-lg font-black text-slate-950 tracking-tight mb-1.5">
+      <div className="h-[205px] p-2 sm:p-2.5 bg-white flex flex-col overflow-hidden">
+        <h4 className="h-[20px] overflow-hidden whitespace-nowrap text-ellipsis text-sm sm:text-base font-black text-slate-950 tracking-tight mb-1">
           {card.title}
         </h4>
-        <p className="text-slate-500 text-[11px] sm:text-[12px] leading-relaxed mb-2">
+        <p className="h-[34px] overflow-hidden text-slate-500 text-[10px] sm:text-[11px] leading-relaxed mb-1.5 [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {card.subtitle}
         </p>
-        <p className="text-slate-500 text-[11px] sm:text-[12px] leading-relaxed mb-2.5">
+        <p className="h-[50px] overflow-hidden text-slate-500 text-[10px] sm:text-[11px] leading-relaxed mb-2 [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical]">
           {card.description}
         </p>
-        <div className="flex flex-wrap gap-1 mb-2.5">
+        <div className="h-[48px] shrink-0 flex flex-wrap content-start gap-1 mb-2 overflow-hidden">
           {card.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[9px] sm:text-[10px] text-slate-600"
+              className="rounded-full border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[8px] sm:text-[9px] text-slate-600"
             >
               {tag}
             </span>
           ))}
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-[9px] font-black uppercase tracking-[0.18em] text-slate-400">
+        <div className="mt-auto flex items-center justify-between">
+          <span className="text-[8px] font-black uppercase tracking-[0.16em] text-slate-400">
             Horizontal showcase
           </span>
           {card.link ? (
@@ -461,15 +461,15 @@ function ShowcaseCard({
               target="_blank"
               rel="noopener noreferrer"
               onPointerDown={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 text-xs font-black text-accent"
+              className="inline-flex items-center gap-1.5 text-[11px] font-black text-accent"
             >
               Explore
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </a>
           ) : (
-            <span className="inline-flex items-center gap-1.5 text-xs font-black text-accent">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-black text-accent">
               Explore
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </span>
           )}
         </div>
@@ -594,21 +594,51 @@ export default function WebDevelopment() {
     applyShowcaseOffset();
   };
 
-  const nudgeShowcase = (direction: "left" | "right") => {
+  const getShowcaseStep = () => {
     const cards = getShowcaseCards();
-    if (cards.length === 0) return;
+    if (cards.length < 2) return cards[0]?.offsetWidth ?? 340;
 
-    const currentIndex = getCenteredShowcaseIndex();
-    const nextIndex =
+    return cards[1].offsetLeft - cards[0].offsetLeft;
+  };
+
+  const nudgeShowcase = (direction: "left" | "right") => {
+    const track = showcaseTrackRef.current;
+    const firstSet = showcaseFirstSetRef.current;
+    const setWidth = firstSet?.offsetWidth ?? 0;
+    const step = getShowcaseStep();
+
+    if (!track || step === 0) return;
+
+    if (setWidth > 0) {
+      if (direction === "right" && showcaseOffsetRef.current - step <= -setWidth) {
+        showcaseOffsetRef.current += setWidth;
+        applyShowcaseOffset();
+      }
+
+      if (direction === "left" && showcaseOffsetRef.current + step > 0) {
+        showcaseOffsetRef.current -= setWidth;
+        applyShowcaseOffset();
+      }
+    }
+
+    const targetOffset =
       direction === "left"
-        ? (currentIndex - 1 + cards.length) % cards.length
-        : (currentIndex + 1) % cards.length;
+        ? showcaseOffsetRef.current + step
+        : showcaseOffsetRef.current - step;
 
-    snapShowcaseToIndex(nextIndex);
+    showcasePauseUntilRef.current = Date.now() + 1200;
+    gsap.killTweensOf(showcaseOffsetRef);
+    gsap.to(showcaseOffsetRef, {
+      current: targetOffset,
+      duration: 0.45,
+      ease: "power2.out",
+      onUpdate: applyShowcaseOffset,
+      onComplete: applyShowcaseOffset,
+    });
   };
 
   const handleShowcasePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.target instanceof Element && event.target.closest("a")) return;
+    if (event.target instanceof Element && event.target.closest("a, button")) return;
 
     showcaseDragRef.current = {
       isDragging: true,
@@ -895,6 +925,13 @@ export default function WebDevelopment() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8 flex justify-center px-6 reveal-item">
+          <Link href="/contact" className="group inline-flex items-center gap-3 rounded-full bg-slate-950 px-8 py-3.5 text-sm font-black text-white shadow-[0_14px_30px_-12px_rgba(2,6,23,0.65)] transition-all hover:-translate-y-0.5 hover:scale-105 hover:bg-accent">
+            Build My Platform
+            <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </section>
       {/* HORIZONTAL ROTATING CARDS - BENEFITS */}
